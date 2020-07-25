@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 import Message from "./Message";
 import { makeStyles } from "@material-ui/core/styles";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 const useStyles = makeStyles((theme) => ({
   positionLeft: {
@@ -21,6 +22,7 @@ const MessagesView = (props) => {
 
   return (
     <Box style={{ height: "75%" }}>
+      {props.loading && <LinearProgress />}
       <Box
         onScroll={props.handleScroll}
         px={3}
@@ -52,6 +54,7 @@ const MessagesView = (props) => {
             />
           </Box>
         ))}
+        <Box ref={props.divRef} />
       </Box>
     </Box>
   );
