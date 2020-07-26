@@ -7,6 +7,9 @@ I've included a .env file in the root directory where you have to put my token a
 Afterwards the code will run with the following steps -
 
 git clone https://github.com/AlexHurrell/WD-ALEX-HURRELL.git
+
 cd WD-ALEX-HURRELL
+
 npm install
+
 npm start
