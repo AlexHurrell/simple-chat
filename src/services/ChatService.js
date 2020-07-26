@@ -1,43 +1,39 @@
+import axios from "axios";
+
 export default class ChatService {
-    static getChat(number, stamp) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-        resolve([
-          {
-            _id: "5d51a399c3b118001c41ede7",
-            message: "asdasdasd",
-            author: "Mih",
-            timestamp: 1565631385441
-          },
-          {
-            _id: "5d51a692c3b118001c41edeee",
-            message: "nova poruka za mog kuma",
-            author: "Mih",
-            timestamp: 1565632146550
-          },
-          {
-            _id: "5d529bfac3b118001c41edehe",
-            message: "dddas",
-            author: "Mih",
-            timestamp: 1565694970817
-          },
-          {
-            _id: "5d540cdbc3b118001c41edeheee",
-            message: "jjj",
-            author: "Mih",
-            timestamp: 1565789403228
-          },
-        ]);
-    }, 500);
+  static getChat(number, stamp) {
+    return axios
+      .get(
+        `${process.env.REACT_APP_API_URL}?since=${stamp}&limit=${number}&token=${process.env.REACT_APP_API_TOKEN}`
+      )
+      .then((res) => res.data)
+      .catch((error) => {
+        return error;
       });
-    }
-  
-    static sendMessage(body) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve("Hello World!");
-        }, 500);
-      });
-    }
   }
-  
+
+  static getAllChat() {
+    return axios
+      .get(
+        `${process.env.REACT_APP_API_URL}?token=${process.env.REACT_APP_API_TOKEN}`
+      )
+      .then((res) => res.data)
+      .catch((error) => {
+        return error;
+      });
+  }
+
+  static sendMessage(data) {
+    return axios
+      .post(`${process.env.REACT_APP_API_URL}`, data, {
+        headers: {
+          "Content-Type": "application/json",
+          token: `${process.env.REACT_APP_API_TOKEN}`,
+        },
+      })
+      .then((res) => res.data.data)
+      .catch((error) => {
+        return error;
+      });
+  }
+}

@@ -10,7 +10,7 @@ const InputBar = (props) => {
     <Box
       px={3}
       style={{
-        height: "15%",
+        height: "10%",
         display: "grid",
         alignItems: "center",
         backgroundColor: "#FEFEFE",
@@ -26,7 +26,6 @@ const InputBar = (props) => {
                 variant="outlined"
                 size="small"
                 onChange={props.handleChange}
-                color="white"
                 placeholder="Type a message"
                 value={props.input}
               />

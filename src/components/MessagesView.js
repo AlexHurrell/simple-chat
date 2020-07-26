@@ -21,16 +21,16 @@ const MessagesView = (props) => {
   const classes = useStyles();
 
   return (
-    <Box style={{ height: "75%" }}>
+    <Box style={{ height: "80%" }}>
       {props.loading && <LinearProgress />}
       <Box
-        onScroll={props.handleScroll}
         px={3}
         py={3}
         style={{
           height: "100%",
           boxSizing: "border-box",
           backgroundImage: `url(${"./body.png"})`,
+          backgroundSize: "cover",
           overflowY: "scroll",
         }}
       >
