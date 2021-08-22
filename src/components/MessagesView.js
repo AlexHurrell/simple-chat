@@ -29,7 +29,7 @@ const MessagesView = (props) => {
         style={{
           height: "100%",
           boxSizing: "border-box",
-          backgroundImage: `url(${"./body.png"})`,
+          backgroundImage: `url(${"./body.jpg"})`,
           backgroundSize: "cover",
           overflowY: "scroll",
         }}

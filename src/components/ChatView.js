@@ -9,7 +9,7 @@ import ChatService from "../services/ChatService";
 
 const ChatView = () => {
   const divRef = useRef(null);
-  const [user, setUser] = React.useState("me");
+  const [user] = React.useState("me");
   const [input, setInput] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [messages, setMessages] = React.useState([]);
@@ -91,7 +91,7 @@ const ChatView = () => {
     if (noScroll === false) {
       divRef.current.scrollIntoView();
     }
-  }, [messages]);
+  }, [messages, noScroll]);
 
   //Get any new messages every 2 seconds.
   useEffect(() => {
@@ -102,7 +102,7 @@ const ChatView = () => {
       getUpdatedData();
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [getUpdatedData]);
 
   return (
     <Container>

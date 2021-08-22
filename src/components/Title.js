@@ -14,7 +14,7 @@ const Title = () => {
       }}
     >
       <Typography variant="h4" style={{ color: "#40769F", fontWeight: "bold" }}>
-        DOODLE CHAT
+        Simple Chat
       </Typography>
     </Box>
   );
