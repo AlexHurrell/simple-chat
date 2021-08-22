@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from "react";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -64,7 +65,7 @@ const ChatView = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (input !== "") {
+    if (input) {
       let body = {
         message: input,
         author: "me",
@@ -91,7 +92,7 @@ const ChatView = () => {
     if (noScroll === false) {
       divRef.current.scrollIntoView();
     }
-  }, [messages, noScroll]);
+  }, [messages]);
 
   //Get any new messages every 2 seconds.
   useEffect(() => {
@@ -102,13 +103,13 @@ const ChatView = () => {
       getUpdatedData();
     }, 2000);
     return () => clearInterval(interval);
-  }, [getUpdatedData]);
+  }, []);
 
   return (
     <Container>
       <Box style={{ height: "100vh" }}>
         <Box style={{ height: "100%", boxSizing: "border-box", padding: "5%" }}>
-          <Paper style={{ height: "100%" }}>
+          <Paper style={{ height: "100%", minHeight: "550px" }}>
             <Title></Title>
 
             <MessagesView
