@@ -101,7 +101,7 @@ const ChatView = () => {
 
     const interval = setInterval(() => {
       getUpdatedData();
-    }, 2000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
