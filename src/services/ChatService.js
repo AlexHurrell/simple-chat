@@ -6,32 +6,32 @@ let chats = [
   {
     message: "hello",
     author: "alex",
-    timestamp: 1598098961,
+    timestamp: 1631034208575,
   },
   {
     message: "hello from me",
     author: "bobby",
-    timestamp: 1600777361,
+    timestamp: 1631034251573,
   },
   {
     message: "hello from me too",
     author: "charles",
-    timestamp: 1603369361,
+    timestamp: 1631034351573,
   },
   {
     message: "hello",
     author: "david",
-    timestamp: 1606047761,
+    timestamp: 1631034451573,
   },
   {
     message: "hello",
     author: "emma",
-    timestamp: 1608639761,
+    timestamp: 1631034551573,
   },
   {
     message: "hello",
     author: "frances",
-    timestamp: 1611318161,
+    timestamp: 1631034651573,
   },
 ];
 
@@ -41,7 +41,7 @@ export default class ChatService {
 
     const chance = Math.random();
 
-    if (chance > 0.8) {
+    if (chance > 0.99) {
       newChat.push({
         author: "talkative",
         message: `my new message at ${timestampConverter(moment())}`,
